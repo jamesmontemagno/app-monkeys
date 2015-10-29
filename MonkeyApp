@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="NavDrawer.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 4 (Lollipop)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Adapters/MonkeyAdapter.cs">
+    <Files>
+      <File FileName="Resources/Values/styles.xml" Line="10" Column="1" />
+      <File FileName="Models/Monkey.cs" Line="1" Column="2" />
+      <File FileName="Adapters/Util.cs" Line="25" Column="17" />
+      <File FileName="Activities/HomeActivity.cs" Line="1" Column="1" />
+      <File FileName="Fragments/BrowseFragment.cs" Line="35" Column="9" />
+      <File FileName="Adapters/FriendsAdapter.cs" Line="1" Column="1" />
+      <File FileName="Adapters/MonkeyAdapter.cs" Line="60" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.NavDrawer AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>
