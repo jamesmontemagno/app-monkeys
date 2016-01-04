@@ -46,7 +46,7 @@ In this case I am specifying multiple data schemes, hosts, and prefixes to handl
  
 Here is a breakdown for http://monkeysapp.com/Home/Detail/Baboon
 * Scheme: http
-* Host: *.monkeysapp.com (this is enables both http://monkeysapp.com and http://www.monkeysapp.com or any subdomain)
+* Host: *.monkeysapp.com (this is enables http://www.monkeysapp.com and any subdomain, if you need  http://monkeysapp.com without the www. simply add another Intent Filter)
 * Path Prefix: This is what follows the main url and will lead to the monkeys identifier of Baboon. I could also have left off the / if my website used ?id=Baboon that I could parse in code.
 
 ### Handle Intent Filters
