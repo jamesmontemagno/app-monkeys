@@ -5,7 +5,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Widget;
 
-namespace MonkeyApp.Helpers
+namespace MonkeysApp.Helpers
 {
     public class SquareImageView : ImageView
     {

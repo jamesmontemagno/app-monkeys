@@ -8,12 +8,12 @@ using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 
-using MonkeyApp.Activities;
-using MonkeyApp.Adapters;
-using MonkeyApp.Models;
-using MonkeyApp.Helpers;
+using MonkeysApp.Activities;
+using MonkeysApp.Adapters;
+using MonkeysApp.Models;
+using MonkeysApp.Helpers;
 
-namespace MonkeyApp.Fragments
+namespace MonkeysApp.Fragments
 {
     public class BrowseFragment : Fragment
     {
@@ -40,9 +40,7 @@ namespace MonkeyApp.Fragments
         void GridOnItemClick(object sender, AdapterView.ItemClickEventArgs itemClickEventArgs)
         {
             var intent = new Intent(Activity, typeof(DetailsActivity));
-            intent.PutExtra("Title", friends[itemClickEventArgs.Position].Title);
-            intent.PutExtra("Image", friends[itemClickEventArgs.Position].Image);
-            intent.PutExtra("Details", friends[itemClickEventArgs.Position].Details);
+            intent.PutExtra("Name", friends[itemClickEventArgs.Position].Name);
             StartActivity(intent);
         }
 

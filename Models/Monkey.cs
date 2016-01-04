@@ -1,51 +1,31 @@
 using System.Collections.Generic;
 
-using MonkeyApp.Adapters;
-using MonkeyApp.Helpers;
+using MonkeysApp.Adapters;
+using MonkeysApp.Helpers;
+using Newtonsoft.Json;
 
-namespace MonkeyApp.Models
+namespace MonkeysApp.Models
 {
     public class Monkey
     {
-        public void Init()
-        {
-            Items = Util.GenerateFriends();
-            Items.RemoveRange(0, this.Items.Count - 2);
-        }
 
-        public string Image
-        {
-            get;
-            set;
-        }
+        [JsonProperty("Name")]
+        public string Name { get; set; }
 
+        [JsonProperty("Location")]
+        public string Location { get; set; }
 
-        /// <summary>
-        /// Gets or sets the unique ID for the menu
-        /// </summary>
-        public long Id
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Gets or sets the name of the menu
-        /// </summary>
-        public string Title
-        {
-            get;
-            set;
-        }
-
+        [JsonProperty("Details")]
         public string Details { get; set; }
 
-       
+        [JsonProperty("Image")]
+        public string Image { get; set; }
 
-        public List<Monkey> Items
-        {
-            get;
-            set;
-        }
+        [JsonProperty("Population")]
+        public int Population { get; set; }
+    }
+
+    public class MonkeyCollection : List<Monkey>
+    {
     }
 }

@@ -44,6 +44,43 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="James Montemagno is a Developer Evangelist at Xamarin and Microsoft MVP. He has been a .NET developer for over a decade working in a wide range of industries and before joining Xamarin was a professional mobile developer using the Xamarin platform for over 4 years. He can be found on Twitter @JamesMontemagno and blogs regularly at  www.MotzCod.es" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Twitter: @JamesMontemagno"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/twitter"
+                    android:clickable="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Blog: www.motzcod.es"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/website"
+                    android:clickable="true" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            android:id="@+id/copyright"
+            android:clickable="true">
+            <LinearLayout
+                style="@style/Widget.CardContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Copyright"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Images and Details courtesy of Wikipedia" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>

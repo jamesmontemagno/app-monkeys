@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeyApp", "MonkeyApp.csproj", "{0393D583-541C-43B7-8693-ABD7B6548E6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeysApp", "MonkeysApp.csproj", "{0393D583-541C-43B7-8693-ABD7B6548E6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

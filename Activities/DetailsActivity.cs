@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Android.App;
 using Android.Content;
@@ -7,106 +8,145 @@ using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 
-using MonkeyApp.Adapters;
-using MonkeyApp.Models;
+using MonkeysApp.Adapters;
+using MonkeysApp.Models;
 using UniversalImageLoader.Core;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 
 
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
-using MonkeyApp.Helpers;
+using MonkeysApp.Helpers;
+using Android.Gms.AppIndexing;
+using Android.Gms.Common.Apis;
+using Android.Runtime;
 
-namespace MonkeyApp.Activities
+namespace MonkeysApp.Activities
 {
-    [Activity(Label = "Details",ParentActivity = typeof(HomeView))]
-    [MetaData("android.support.PARENT_ACTIVITY", Value = "MonkeyApp.activities.HomeView")]
-	public class DetailsActivity : AppCompatActivity
+    [Activity(Name = "com.refractored.monkeysapp.DetailsActivity", Label = "Details", ParentActivity = typeof(MainActivity))]
+    [IntentFilter(new []{ Intent.ActionView },
+        Categories = new []
+        {
+            Android.Content.Intent.CategoryDefault,
+            Android.Content.Intent.CategoryBrowsable
+        },
+        DataScheme = "http",
+        DataHost = "www.monkeysapp.com",
+        DataPathPrefix = "/Home/Detail/")]
+    [MetaData("android.support.PARENT_ACTIVITY", Value = "MonkeysApp.activities.HomeView")]
+    public class DetailsActivity : AppCompatActivity
     {
-		List<Monkey> friends;
-		ImageLoader imageLoader;
+        List<Monkey> friends;
+        ImageLoader imageLoader;
 
+        Monkey monkey;
+        GoogleApiClient client;
+        string url;
+        string title;
+        string description;
+        string schemaType;
 
         protected override void OnCreate(Android.OS.Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
            
             SetContentView(Resource.Layout.activity_detail);
+
             imageLoader = ImageLoader.Instance;
 
 						
             friends = Util.GenerateFriends();
-            var title = Intent.GetStringExtra("Title");
-            var image = Intent.GetStringExtra("Image");
-            var details = Intent.GetStringExtra("Details");
+           
 
-            title = string.IsNullOrWhiteSpace(title) ? "New Friend" : title;
             var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar (toolbar);
+            SetSupportActionBar(toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            if (string.IsNullOrWhiteSpace(image))
-                image = friends[0].Image;
+            if (monkey == null)
+            { 
+                var t = Intent.GetStringExtra("Name");
+                monkey = friends.First(m => m.Name == t);
+            }
 
-            SupportActionBar.SetDisplayHomeAsUpEnabled (true);
+            ShowMonkey();
 
-            var collapsingToolbar = FindViewById<CollapsingToolbarLayout> (Resource.Id.collapsing_toolbar);
-            collapsingToolbar.SetTitle (title);
 
-            imageLoader.DisplayImage(image, FindViewById<ImageView> (Resource.Id.friend_image));
+            //client = new GoogleApiClient.Builder(this).AddApi(AppIndex.API).Build();
+            url = $"http://monkeysapp.com/Home/Detail/{monkey.Name.Replace(" ", "%20")}";
+            title = monkey.Name;
+            description = monkey.Details;
+            schemaType = "http://schema.org/Article";
+        }
+
+        void ShowMonkey()
+        {
+            var collapsingToolbar = FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar);
+            collapsingToolbar.SetTitle(monkey.Name);
+
+            imageLoader.DisplayImage(monkey.Image, FindViewById<ImageView>(Resource.Id.friend_image));
 
 
             var detailsTextView = FindViewById<TextView>(Resource.Id.details);
-            detailsTextView.Text = details;
-
-            //var grid = FindViewById<GridView>(Resource.Id.grid);
-            //grid.Adapter = new MonkeyAdapter(this, friends);
-            //grid.ItemClick += GridOnItemClick;
+            detailsTextView.Text = monkey.Details;
 
           
+        }
 
+        public Android.Gms.AppIndexing.Action AppIndexAction
+        {
+            get
+            {
+                var item = new Thing.Builder()
+                .SetName(title)
+                .SetDescription(description)
+                .SetUrl(Android.Net.Uri.Parse(url))
+                //.SetType(schemaType)
+                .Build();
+
+                var thing = new Android.Gms.AppIndexing.Action.Builder(Android.Gms.AppIndexing.Action.TypeView)
+                    .SetObject(item)
+                    .SetActionStatus(Android.Gms.AppIndexing.Action.StatusTypeCompleted)
+                    .Build();
+
+                return thing.JavaCast<Android.Gms.AppIndexing.Action>();
+            }
+        }
+
+        protected override void OnNewIntent(Intent intent)
+        {
+            base.OnNewIntent(intent);
+            var action = intent.Action;
+            var data = intent.DataString;
+            if (Intent.ActionView != action || string.IsNullOrWhiteSpace(data))
+                return;
+
+            var monkeyId = data.Substring(data.LastIndexOf("/", StringComparison.Ordinal) + 1).Replace("%20", " ");
+
+            monkey = friends.First(m => m.Name == monkeyId);
 
         }
 
-        private void GridOnItemClick(object sender, AdapterView.ItemClickEventArgs itemClickEventArgs)
+        protected override async void OnStart()
         {
-            var intent = new Intent(this, typeof(DetailsActivity));
-            intent.PutExtra("Title", friends[itemClickEventArgs.Position].Title);
-            intent.PutExtra("Image", friends[itemClickEventArgs.Position].Image);
-            intent.PutExtra("Details", friends[itemClickEventArgs.Position].Details);
-            StartActivity(intent);
+            base.OnStart();
+            //client.Connect();
+            //await AppIndex.AppIndexApi.StartAsync(client, AppIndexAction);
+        }
+
+        protected override async void OnStop()
+        {
+            //await AppIndex.AppIndexApi.EndAsync(client, AppIndexAction);
+            //client.Disconnect();
+            base.OnStop();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)           
+            switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
 
-					NavUtils.NavigateUpFromSameTask(this);
-
-                    //Wrong:
-                    //var intent = new Intent(this, typeof(HomeView));
-                    //intent.AddFlags(ActivityFlags.ClearTop);
-                    //StartActivity(intent);
-                    
-
-                    //if this could be launched externally:
-                    
-						/*var upIntent = NavUtils.GetParentActivityIntent(this);
-						if (NavUtils.ShouldUpRecreateTask(this, upIntent))
-						{
-							// This activity is NOT part of this app's task, so create a new task
-							// when navigating up, with a synthesized back stack.
-							Android.Support.V4.App.TaskStackBuilder.Create(this).
-								AddNextIntentWithParentStack(upIntent).StartActivities();
-						}
-						else
-						{
-							// This activity is part of this app's task, so simply
-							// navigate up to the logical parent activity.
-							NavUtils.NavigateUpTo(this, upIntent); 
-						}*/
-                     
+                    NavUtils.NavigateUpFromSameTask(this);
                     break;
             }
 

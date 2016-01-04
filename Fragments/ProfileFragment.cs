@@ -3,12 +3,14 @@ using Android.Content;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
-using MonkeyApp.Activities;
+using MonkeysApp.Activities;
 using Fragment = Android.Support.V4.App.Fragment;
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 using UniversalImageLoader.Core;
+using Plugin.Share;
+using Android.Support.V7.Widget;
 
-namespace MonkeyApp.Fragments
+namespace MonkeysApp.Fragments
 {
     public class ProfileFragment : Fragment
     {
@@ -28,21 +30,23 @@ namespace MonkeyApp.Fragments
 
             view.FindViewById<ImageView>(Resource.Id.profile_image).Click += (sender, args) =>
                 {
-                    var builder = new NotificationCompat.Builder(Activity)
-                    .SetSmallIcon(Resource.Drawable.ic_launcher)
-                    .SetContentTitle("Click to go to friend details!")
-                    .SetContentText("New Friend!!");
-                            
-                    var friendActivity = new Intent(Activity, typeof(DetailsActivity));
+                    CrossShare.Current.OpenBrowser("http://github.com/jamesmontemagno");
+                };
 
-                    PendingIntent pendingIntent = PendingIntent.GetActivity(Activity, 0, friendActivity, 0);
-                  
 
-                    builder.SetContentIntent(pendingIntent);
-                    builder.SetAutoCancel(true);
-                    var notificationManager = 
-                        (NotificationManager) Activity.GetSystemService(Context.NotificationService);
-                    notificationManager.Notify(0, builder.Build());
+            view.FindViewById<CardView>(Resource.Id.copyright).Click += (sender, args) =>
+                {
+                    CrossShare.Current.OpenBrowser("http://www.wikipedia.org");
+                };
+
+            view.FindViewById<TextView>(Resource.Id.website).Click += (sender, args) =>
+                {
+                    CrossShare.Current.OpenBrowser("http://motzcod.es");
+                };
+
+            view.FindViewById<TextView>(Resource.Id.twitter).Click += (sender, args) =>
+                {
+                    CrossShare.Current.OpenBrowser("http://m.twitter.com/jamesmontemagno");
                 };
             return view;
         }

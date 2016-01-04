@@ -4,15 +4,22 @@ using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Views;
 
-using MonkeyApp.Fragments;
+using MonkeysApp.Fragments;
 using Android.Support.Design.Widget;
 using UniversalImageLoader.Core;
+using MonkeysApp;
+using Android.Gms.Common.Apis;
+using Android.Gms.AppIndexing;
 
-namespace MonkeyApp.Activities
+namespace MonkeysApp.Activities
 {
-    [Activity(Label = "Monkeys", MainLauncher = true, LaunchMode = LaunchMode.SingleTop, Icon = "@drawable/ic_launcher")]
-    public class HomeView : BaseActivity
+    [Activity(Label = "Monkeys", Name="com.refractored.monkeysapp.MainActivity", MainLauncher = true, LaunchMode = LaunchMode.SingleTop, Icon = "@drawable/ic_launcher")]
+    public class MainActivity : BaseActivity
     {
+
+
+
+
         DrawerLayout drawerLayout;
         NavigationView navigationView;
 
@@ -59,7 +66,11 @@ namespace MonkeyApp.Activities
             {
                 ListItemClicked(0);
             }
+
+
         }
+
+
 
         private void ListItemClicked(int position)
         {

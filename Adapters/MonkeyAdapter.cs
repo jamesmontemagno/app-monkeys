@@ -5,10 +5,11 @@ using Android.App;
 using Android.Views;
 using Android.Widget;
 
-using MonkeyApp.Models;
+using MonkeysApp.Models;
 using UniversalImageLoader.Core;
+using MonkeysApp;
 
-namespace MonkeyApp.Adapters
+namespace MonkeysApp.Adapters
 {
     internal class MonkeyAdapterWrapper : Java.Lang.Object
     {
@@ -57,7 +58,7 @@ namespace MonkeyApp.Adapters
 
             var friend = friends.ElementAt(position);
 
-            wrapper.Title.Text = friend.Title;
+            wrapper.Title.Text = friend.Name;
 
             wrapper.Art.SetImageResource(Android.Resource.Color.Transparent);
             ImageLoader.DisplayImage(friend.Image, wrapper.Art);
