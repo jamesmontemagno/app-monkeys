@@ -13,15 +13,33 @@ Intent filters are part of the app's manifest file and specify the type of inten
 
 ```csharp
 [Activity(Name = "com.refractored.monkeysapp.DetailsActivity", Label = "Details", ParentActivity = typeof(MainActivity))]
-    [IntentFilter(new []{ Intent.ActionView },
+[IntentFilter(new []{ Intent.ActionView },
         Categories = new []
         {
             Android.Content.Intent.CategoryDefault,
             Android.Content.Intent.CategoryBrowsable
         },
-        DataSchemes = new []{"http", "https"},
-        DataHosts = new []{"*.monkeysapp.com", "*.monkeysapp.com"},
-        DataPathPrefixes = new []{"/Home/Detail/", "/Home/Detail/"})]
+        DataScheme = "http",
+        DataHost = "*.monkeysapp.com",
+        DataPathPrefix = "/Home/Detail/")]
+public class DetailsActivity : AppCompatActivity
+{
+    //...
+}
+```
+
+If you need to support both http and https urls be sure to add another IntentFilter with the https DataScheme such as:
+
+```csharp
+[IntentFilter(new []{ Intent.ActionView },
+    Categories = new []
+    {
+        Android.Content.Intent.CategoryDefault,
+        Android.Content.Intent.CategoryBrowsable
+    },
+    DataScheme = "https",
+    DataHost = "*.monkeysapp.com",
+    DataPathPrefix = "/Home/Detail/")]
 ```
 
 In this case I am specifying multiple data schemes, hosts, and prefixes to handle both http and https URLs. 
