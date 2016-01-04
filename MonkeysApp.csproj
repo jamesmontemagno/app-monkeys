@@ -71,12 +71,6 @@
     <Reference Include="Xamarin.Android.Support.Design">
       <HintPath>packages\Xamarin.Android.Support.Design.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.GooglePlayServices.Basement">
-      <HintPath>packages\Xamarin.GooglePlayServices.Basement.27.0.0.0\lib\MonoAndroid41\Xamarin.GooglePlayServices.Basement.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.GooglePlayServices.AppIndexing">
-      <HintPath>packages\Xamarin.GooglePlayServices.AppIndexing.27.0.0.0\lib\MonoAndroid41\Xamarin.GooglePlayServices.AppIndexing.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Insights">
       <HintPath>packages\Xamarin.Insights.1.11.3\lib\MonoAndroid10\Xamarin.Insights.dll</HintPath>
     </Reference>
@@ -100,6 +94,12 @@
     </Reference>
     <Reference Include="Plugin.CurrentActivity">
       <HintPath>packages\Plugin.CurrentActivity.1.0.1\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Basement">
+      <HintPath>packages\Xamarin.GooglePlayServices.Basement.28.0.0.0-beta1\lib\MonoAndroid41\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.AppIndexing">
+      <HintPath>packages\Xamarin.GooglePlayServices.AppIndexing.28.0.0.0-beta1\lib\MonoAndroid41\Xamarin.GooglePlayServices.AppIndexing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

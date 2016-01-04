@@ -34,9 +34,7 @@ namespace MonkeysApp.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            var config = ImageLoaderConfiguration.CreateDefault(ApplicationContext);
-            // Initialize ImageLoader with configuration.
-            ImageLoader.Instance.Init(config);
+           
 
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
 

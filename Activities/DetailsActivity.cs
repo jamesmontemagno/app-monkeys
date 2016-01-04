@@ -17,13 +17,17 @@ using Android.Support.V7.App;
 
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using MonkeysApp.Helpers;
+
 using Android.Gms.AppIndexing;
 using Android.Gms.Common.Apis;
 using Android.Runtime;
+using IndexingAction = Android.Gms.AppIndexing.Action;
+using Android.Content.PM;
 
 namespace MonkeysApp.Activities
 {
-    [Activity(Name = "com.refractored.monkeysapp.DetailsActivity", Label = "Details", ParentActivity = typeof(MainActivity))]
+    [Activity(Name = "com.refractored.monkeysapp.DetailsActivity", Label = "Details", LaunchMode = LaunchMode.SingleTop, ParentActivity = typeof(MainActivity))]
+    [MetaData("android.support.PARENT_ACTIVITY", Value = "com.refactored.monkeysapp.MainActivity")]
     [IntentFilter(new []{ Intent.ActionView },
         Categories = new []
         {
@@ -31,9 +35,17 @@ namespace MonkeysApp.Activities
             Android.Content.Intent.CategoryBrowsable
         },
         DataScheme = "http",
-        DataHost = "www.monkeysapp.com",
+        DataHost = "*.monkeysapp.com",
         DataPathPrefix = "/Home/Detail/")]
-    [MetaData("android.support.PARENT_ACTIVITY", Value = "MonkeysApp.activities.HomeView")]
+    [IntentFilter(new []{ Intent.ActionView },
+        Categories = new []
+        {
+            Android.Content.Intent.CategoryDefault,
+            Android.Content.Intent.CategoryBrowsable
+        },
+        DataScheme = "https",
+        DataHost = "*.monkeysapp.com",
+        DataPathPrefix = "/Home/Detail/")]
     public class DetailsActivity : AppCompatActivity
     {
         List<Monkey> friends;
@@ -44,7 +56,6 @@ namespace MonkeysApp.Activities
         string url;
         string title;
         string description;
-        string schemaType;
 
         protected override void OnCreate(Android.OS.Bundle savedInstanceState)
         {
@@ -52,10 +63,11 @@ namespace MonkeysApp.Activities
            
             SetContentView(Resource.Layout.activity_detail);
 
+            friends = Util.GenerateFriends();
+            OnNewIntent(Intent);
             imageLoader = ImageLoader.Instance;
 
 						
-            friends = Util.GenerateFriends();
            
 
             var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
@@ -71,15 +83,19 @@ namespace MonkeysApp.Activities
             ShowMonkey();
 
 
-            //client = new GoogleApiClient.Builder(this).AddApi(AppIndex.API).Build();
+            client = new GoogleApiClient.Builder(this).AddApi(AppIndex.API).Build();
             url = $"http://monkeysapp.com/Home/Detail/{monkey.Name.Replace(" ", "%20")}";
             title = monkey.Name;
             description = monkey.Details;
-            schemaType = "http://schema.org/Article";
         }
 
         void ShowMonkey()
         {
+            if(monkey == null)
+                return;
+
+            Xamarin.Insights.Track("Details", "monkey", monkey.Name);
+            
             var collapsingToolbar = FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar);
             collapsingToolbar.SetTitle(monkey.Name);
 
@@ -92,7 +108,7 @@ namespace MonkeysApp.Activities
           
         }
 
-        public Android.Gms.AppIndexing.Action AppIndexAction
+        public IndexingAction AppIndexAction
         {
             get
             {
@@ -100,15 +116,14 @@ namespace MonkeysApp.Activities
                 .SetName(title)
                 .SetDescription(description)
                 .SetUrl(Android.Net.Uri.Parse(url))
-                //.SetType(schemaType)
                 .Build();
 
-                var thing = new Android.Gms.AppIndexing.Action.Builder(Android.Gms.AppIndexing.Action.TypeView)
+                var thing = new IndexingAction.Builder(IndexingAction.TypeView)
                     .SetObject(item)
-                    .SetActionStatus(Android.Gms.AppIndexing.Action.StatusTypeCompleted)
+                    .SetActionStatus(IndexingAction.StatusTypeCompleted)
                     .Build();
 
-                return thing.JavaCast<Android.Gms.AppIndexing.Action>();
+                return thing.JavaCast<IndexingAction>();
             }
         }
 
@@ -123,21 +138,35 @@ namespace MonkeysApp.Activities
             var monkeyId = data.Substring(data.LastIndexOf("/", StringComparison.Ordinal) + 1).Replace("%20", " ");
 
             monkey = friends.First(m => m.Name == monkeyId);
-
+            if(client != null)
+                ShowMonkey();
         }
 
         protected override async void OnStart()
         {
             base.OnStart();
-            //client.Connect();
-            //await AppIndex.AppIndexApi.StartAsync(client, AppIndexAction);
+            try
+            {
+                client.Connect();
+                await AppIndex.AppIndexApi.StartAsync(client, AppIndexAction);
+            }
+            catch(Exception ex)
+            {
+            }
         }
 
         protected override async void OnStop()
         {
-            //await AppIndex.AppIndexApi.EndAsync(client, AppIndexAction);
-            //client.Disconnect();
+            
             base.OnStop();
+            try
+            {
+                await AppIndex.AppIndexApi.EndAsync(client, AppIndexAction);
+                client.Disconnect();
+            }
+            catch(Exception ex)
+            {
+            }
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
