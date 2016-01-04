@@ -26,8 +26,28 @@ using Android.Content.PM;
 
 namespace MonkeysApp.Activities
 {
-    [Activity(Name = "com.refractored.monkeysapp.DetailsActivity", Label = "Details", LaunchMode = LaunchMode.SingleTop, ParentActivity = typeof(MainActivity))]
+    
+    [Activity(Name = "com.refractored.monkeysapp.DetailsActivity", Label = "Monkeys App", LaunchMode = LaunchMode.SingleTop, ParentActivity = typeof(MainActivity))]
     [MetaData("android.support.PARENT_ACTIVITY", Value = "com.refactored.monkeysapp.MainActivity")]
+    #region Intent Filters
+    [IntentFilter(new []{ Intent.ActionView },
+        Categories = new []
+        {
+            Android.Content.Intent.CategoryDefault,
+            Android.Content.Intent.CategoryBrowsable
+        },
+        DataScheme = "http",
+        DataHost = "monkeysapp.com",
+        DataPathPrefix = "/Home/Detail/")]
+    [IntentFilter(new []{ Intent.ActionView },
+        Categories = new []
+        {
+            Android.Content.Intent.CategoryDefault,
+            Android.Content.Intent.CategoryBrowsable
+        },
+        DataScheme = "https",
+        DataHost = "monkeysapp.com",
+        DataPathPrefix = "/Home/Detail/")]
     [IntentFilter(new []{ Intent.ActionView },
         Categories = new []
         {
@@ -46,6 +66,7 @@ namespace MonkeysApp.Activities
         DataScheme = "https",
         DataHost = "*.monkeysapp.com",
         DataPathPrefix = "/Home/Detail/")]
+    #endregion
     public class DetailsActivity : AppCompatActivity
     {
         List<Monkey> friends;
