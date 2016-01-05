@@ -6,13 +6,13 @@ This is a Sample application for Android built with Xamarin that showcases [App 
 Before you can get started implementing App Indexing it is important that you have your **website live and that a version of your app is live on Google Play**. 
 
 ## Support HTTP URLs
-Before we even integrate the App Indexing SDK we can supply a specific activity with new intent filters to handle specific data schemes. This is the fist step in associating a HTTP Url such as http://monkeysapp.com/Home/Detail/Baboon to navigate into the app's details activity instead of navigating to the website.
+Before we even integrate the App Indexing SDK we can supply a specific activity with new intent filters to handle specific data schemes. This is the fist step in associating a HTTP Url such as http://monkeysapp.com/Home/Detail/Baboon to navigate into the app's details activity instead of navigating to the website. Additionally, this will handle the case of heading to http://monkeysapp.com to simply launch the app.
 
 ### Add Intent Filters
 Intent filters are part of the app's manifest file and specify the type of intents that the activity would like to receive. These are common when an application would like other apps to directly start a specific activity in your app such as sharing text or photos. Filters in this case will tell App Indexing what types of URL data shemes your app can handle such as http and https. Filters are added as attributes to the Activity:
 
 ```csharp
-[Activity(Name = "com.refractored.monkeysapp.DetailsActivity", Label = "Details", ParentActivity = typeof(MainActivity))]
+[Activity(Name = "com.refractored.monkeysapp.MainActivity", Label = "Monkeys App", MainLauncher = true, LaunchMode = LaunchMode.SingleTop, Icon = "@drawable/ic_launcher")]
 [IntentFilter(new []{ Intent.ActionView },
         Categories = new []
         {
@@ -20,9 +20,8 @@ Intent filters are part of the app's manifest file and specify the type of inten
             Android.Content.Intent.CategoryBrowsable
         },
         DataScheme = "http",
-        DataHost = "*.monkeysapp.com",
-        DataPathPrefix = "/Home/Detail/")]
-public class DetailsActivity : AppCompatActivity
+        DataHost = "www.monkeysapp.com")]
+public class MainActivity : AppCompatActivity
 {
     //...
 }
@@ -38,40 +37,27 @@ If you need to support both http and https urls be sure to add another IntentFil
         Android.Content.Intent.CategoryBrowsable
     },
     DataScheme = "https",
-    DataHost = "*.monkeysapp.com",
-    DataPathPrefix = "/Home/Detail/")]
+    DataHost = "www.monkeysapp.com")]
 ```
 
 In this case I am specifying multiple data schemes, hosts, and prefixes to handle both http and https URLs. 
  
 Here is a breakdown for http://monkeysapp.com/Home/Detail/Baboon
 * Scheme: http
-* Host: *.monkeysapp.com (this is enables http://www.monkeysapp.com and any subdomain, if you need  http://monkeysapp.com without the www. simply add another Intent Filter)
-* Path Prefix: This is what follows the main url and will lead to the monkeys identifier of Baboon. I could also have left off the / if my website used ?id=Baboon that I could parse in code.
+* Host: www.monkeysapp.com (this is enables http://www.monkeysapp.com, if you need  http://monkeysapp.com without the www. simply add another Intent Filter. Additionally, you can use *.monkeysapp.com to enable subdomains.)
 
 ### Handle Intent Filters
 Now, when your app is started additional with this intent filter your app will recieve additional information that can be parsed to display information that was deep linked. This information will be part of the Intent's DataString. In this example we will find the Id of the monkey by finding the last "/" in the URL that is passed in. 
 
 ```csharp
-Monkey monkey;
 protected override void OnCreate(Android.OS.Bundle savedInstanceState)
 {
     base.OnCreate(savedInstanceState);
-    
-    //Attempt to parse out monkey.
+    SetContentView(Resource.Layout.activity_main);
+     //Attempt to parse out monkey.
     OnNewIntent(Intent);
-    
-    SetContentView(Resource.Layout.activity_detail);
-    if(monkey == null)
-    {
-      //Navigated from in app
-    }
-    else
-    {
-      //Navigated to from Intent Filter
-    }
-    //Updated UI with Monkey information
 }
+
 protected override void OnNewIntent(Intent intent)
 {
     base.OnNewIntent(intent);
@@ -80,9 +66,18 @@ protected override void OnNewIntent(Intent intent)
     if (Intent.ActionView != action || string.IsNullOrWhiteSpace(data))
         return;
 
+    //only if deep linking
+    if (!data.Contains("/Home/Detail/"))
+        return;
+
     var monkeyId = data.Substring(data.LastIndexOf("/", StringComparison.Ordinal) + 1).Replace("%20", " ");
 
-    monkey = friends.First(m => m.Name == monkeyId);
+    if (!string.IsNullOrWhiteSpace(monkeyId))
+    {
+        var i = new Intent(this, typeof(DetailsActivity));
+        i.PutExtra("Name", monkeyId);
+        StartActivity(i);
+    }
 }
 ```
 
@@ -109,7 +104,7 @@ Open your AndroidManifest.xml file and add the GPS meta-data for version number:
 
 ### Bring in App Indexing namespaces
 
-In the Activity that you wish to add the App Indexing APIs to add the following using statements:
+In the Activity that you wish to add the App Indexing API, in this case the monkey details page, add the following using statements:
 
 ```csharp
 using Android.Gms.AppIndexing;
@@ -130,10 +125,8 @@ public class DetailsActivity : AppCompatActivity
     protected override void OnCreate(Android.OS.Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
-
-        OnNewIntent(Intent);
-        
         SetContentView(Resource.Layout.activity_detail);
+        
         //Setup GoogleApiClient and get information
         client = new GoogleApiClient.Builder(this).AddApi(AppIndex.API).Build();
         url = $"http://monkeysapp.com/Home/Detail/{monkey.Name.Replace(" ", "%20")}";
@@ -176,9 +169,9 @@ protected override async void OnStart()
 
 protected override async void OnStop()
 {
+    base.OnStop();    
     await AppIndex.AppIndexApi.EndAsync(client, AppIndexAction);
     client.Disconnect();
-    base.OnStop();
 }
 ```
 
