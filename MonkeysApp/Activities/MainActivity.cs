@@ -29,8 +29,9 @@ namespace MonkeysApp.Activities
             Android.Content.Intent.CategoryDefault,
             Android.Content.Intent.CategoryBrowsable
         },
-        DataScheme = "https",
-        DataHost = "www.monkeysapp.com")]
+        DataScheme = "http",
+        DataHost = "www.monkeysapp.com",
+        DataPathPrefix ="/Home/Detail/")]
     [IntentFilter(new []{ Intent.ActionView },
         Categories = new []
         {
@@ -45,8 +46,9 @@ namespace MonkeysApp.Activities
             Android.Content.Intent.CategoryDefault,
             Android.Content.Intent.CategoryBrowsable
         },
-        DataScheme = "https",
-        DataHost = "monkeysapp.com")]
+        DataScheme = "http",
+        DataHost = "monkeysapp.com",
+        DataPathPrefix ="/Home/Detail/")]
     #endregion
     public class MainActivity : BaseActivity
     {

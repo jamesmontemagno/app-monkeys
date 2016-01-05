@@ -39,6 +39,7 @@ namespace MonkeysApp.Activities
         string url;
         string title;
         string description;
+        string schemaType;
 
         protected override void OnCreate(Android.OS.Bundle savedInstanceState)
         {
@@ -66,6 +67,7 @@ namespace MonkeysApp.Activities
             url = $"http://monkeysapp.com/Home/Detail/{monkey.Name.Replace(" ", "%20")}";
             title = monkey.Name;
             description = monkey.Details;
+            schemaType = "http://schema.org/Article";
         }
 
         void ShowMonkey()
@@ -84,6 +86,8 @@ namespace MonkeysApp.Activities
             var detailsTextView = FindViewById<TextView>(Resource.Id.details);
             detailsTextView.Text = monkey.Details;
 
+            var population = FindViewById<TextView>(Resource.Id.population);
+            population.Text = monkey.Population.ToString();
           
         }
 
@@ -95,6 +99,8 @@ namespace MonkeysApp.Activities
                 .SetName(title)
                 .SetDescription(description)
                 .SetUrl(Android.Net.Uri.Parse(url))
+                .SetType(schemaType)
+                .SetId(url)
                 .Build();
 
                 var thing = new IndexingAction.Builder(IndexingAction.TypeView)
