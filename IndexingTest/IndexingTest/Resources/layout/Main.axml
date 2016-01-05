@@ -13,4 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="monkeysapp.com Mandrill" />
+    <Button
+        android:id="@+id/myButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="monkeysapp.com" />
+    <Button
+        android:id="@+id/myButton4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="www.monkeysapp.com" />
 </LinearLayout>

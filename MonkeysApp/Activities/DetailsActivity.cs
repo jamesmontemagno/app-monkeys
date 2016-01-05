@@ -27,46 +27,8 @@ using Android.Content.PM;
 namespace MonkeysApp.Activities
 {
     
-    [Activity(Name = "com.refractored.monkeysapp.DetailsActivity", Label = "Monkeys App", LaunchMode = LaunchMode.SingleTop, ParentActivity = typeof(MainActivity))]
+    [Activity(Name = "com.refractored.monkeysapp.DetailsActivity", Label = "Details", LaunchMode = LaunchMode.SingleTop, ParentActivity = typeof(MainActivity))]
     [MetaData("android.support.PARENT_ACTIVITY", Value = "com.refactored.monkeysapp.MainActivity")]
-    #region Intent Filters
-    [IntentFilter(new []{ Intent.ActionView },
-        Categories = new []
-        {
-            Android.Content.Intent.CategoryDefault,
-            Android.Content.Intent.CategoryBrowsable
-        },
-        DataScheme = "http",
-        DataHost = "monkeysapp.com",
-        DataPathPrefix = "/Home/Detail/")]
-    [IntentFilter(new []{ Intent.ActionView },
-        Categories = new []
-        {
-            Android.Content.Intent.CategoryDefault,
-            Android.Content.Intent.CategoryBrowsable
-        },
-        DataScheme = "https",
-        DataHost = "monkeysapp.com",
-        DataPathPrefix = "/Home/Detail/")]
-    [IntentFilter(new []{ Intent.ActionView },
-        Categories = new []
-        {
-            Android.Content.Intent.CategoryDefault,
-            Android.Content.Intent.CategoryBrowsable
-        },
-        DataScheme = "http",
-        DataHost = "*.monkeysapp.com",
-        DataPathPrefix = "/Home/Detail/")]
-    [IntentFilter(new []{ Intent.ActionView },
-        Categories = new []
-        {
-            Android.Content.Intent.CategoryDefault,
-            Android.Content.Intent.CategoryBrowsable
-        },
-        DataScheme = "https",
-        DataHost = "*.monkeysapp.com",
-        DataPathPrefix = "/Home/Detail/")]
-    #endregion
     public class DetailsActivity : AppCompatActivity
     {
         List<Monkey> friends;
@@ -85,11 +47,7 @@ namespace MonkeysApp.Activities
             SetContentView(Resource.Layout.activity_detail);
 
             friends = Util.GenerateFriends();
-            OnNewIntent(Intent);
             imageLoader = ImageLoader.Instance;
-
-						
-           
 
             var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
@@ -148,20 +106,7 @@ namespace MonkeysApp.Activities
             }
         }
 
-        protected override void OnNewIntent(Intent intent)
-        {
-            base.OnNewIntent(intent);
-            var action = intent.Action;
-            var data = intent.DataString;
-            if (Intent.ActionView != action || string.IsNullOrWhiteSpace(data))
-                return;
-
-            var monkeyId = data.Substring(data.LastIndexOf("/", StringComparison.Ordinal) + 1).Replace("%20", " ");
-
-            monkey = friends.First(m => m.Name == monkeyId);
-            if(client != null)
-                ShowMonkey();
-        }
+       
 
         protected override async void OnStart()
         {

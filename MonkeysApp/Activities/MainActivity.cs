@@ -6,21 +6,49 @@ using Android.Views;
 
 using MonkeysApp.Fragments;
 using Android.Support.Design.Widget;
-using UniversalImageLoader.Core;
 using MonkeysApp;
-using Android.Gms.Common.Apis;
-using Android.Gms.AppIndexing;
+using Android.Content;
+using System;
 
 namespace MonkeysApp.Activities
 {
-    [Activity(Label = "Monkeys", Name="com.refractored.monkeysapp.MainActivity", MainLauncher = true, LaunchMode = LaunchMode.SingleTop, Icon = "@drawable/ic_launcher")]
+    [Activity(Label = "Monkeys App", Name="com.refractored.monkeysapp.MainActivity", MainLauncher = true, LaunchMode = LaunchMode.SingleTop, Icon = "@drawable/ic_launcher")]
+    #region Intent Filters
+    [IntentFilter(new []{ Intent.ActionView },
+        Categories = new []
+        {
+            Android.Content.Intent.CategoryDefault,
+            Android.Content.Intent.CategoryBrowsable
+        },
+        DataScheme = "http",
+        DataHost = "www.monkeysapp.com")]
+    [IntentFilter(new []{ Intent.ActionView },
+        Categories = new []
+        {
+            Android.Content.Intent.CategoryDefault,
+            Android.Content.Intent.CategoryBrowsable
+        },
+        DataScheme = "https",
+        DataHost = "www.monkeysapp.com")]
+    [IntentFilter(new []{ Intent.ActionView },
+        Categories = new []
+        {
+            Android.Content.Intent.CategoryDefault,
+            Android.Content.Intent.CategoryBrowsable
+        },
+        DataScheme = "http",
+        DataHost = "monkeysapp.com")]
+    [IntentFilter(new []{ Intent.ActionView },
+        Categories = new []
+        {
+            Android.Content.Intent.CategoryDefault,
+            Android.Content.Intent.CategoryBrowsable
+        },
+        DataScheme = "https",
+        DataHost = "monkeysapp.com")]
+    #endregion
     public class MainActivity : BaseActivity
-    {
-
-
-
-
-        DrawerLayout drawerLayout;
+    {DrawerLayout drawerLayout;
         NavigationView navigationView;
 
         protected override int LayoutResource
@@ -34,7 +62,7 @@ namespace MonkeysApp.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-           
+
 
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
 
@@ -65,7 +93,30 @@ namespace MonkeysApp.Activities
                 ListItemClicked(0);
             }
 
+            OnNewIntent(Intent);
 
+        }
+
+        protected override void OnNewIntent(Intent intent)
+        {
+            base.OnNewIntent(intent);
+            var action = intent.Action;
+            var data = intent.DataString;
+            if (Intent.ActionView != action || string.IsNullOrWhiteSpace(data))
+                return;
+
+            //only if deep linking
+            if (!data.Contains("/Home/Detail/"))
+                return;
+
+            var monkeyId = data.Substring(data.LastIndexOf("/", StringComparison.Ordinal) + 1).Replace("%20", " ");
+
+            if (!string.IsNullOrWhiteSpace(monkeyId))
+            {
+                var i = new Intent(this, typeof(DetailsActivity));
+                i.PutExtra("Name", monkeyId);
+                StartActivity(i);
+            }
         }
 
 

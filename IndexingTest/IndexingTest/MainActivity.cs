@@ -30,6 +30,16 @@ namespace IndexingTest
                 {
                     CrossShare.Current.OpenBrowser("http://monkeysapp.com/Home/Detail/Mandrill");
                 };
+
+            FindViewById<Button>(Resource.Id.myButton3).Click += delegate
+                {
+                    CrossShare.Current.OpenBrowser("http://monkeysapp.com");
+                };
+
+            FindViewById<Button>(Resource.Id.myButton4).Click += delegate
+                {
+                    CrossShare.Current.OpenBrowser("http://www.monkeysapp.com");
+                };
         }
     }
 }
