@@ -9,6 +9,7 @@ using Android.Support.Design.Widget;
 using MonkeysApp;
 using Android.Content;
 using System;
+using Android.Support.V7.App;
 
 namespace MonkeysApp.Activities
 {
@@ -48,7 +49,8 @@ namespace MonkeysApp.Activities
         DataHost = "monkeysapp.com")]
     #endregion
     public class MainActivity : BaseActivity
-    {DrawerLayout drawerLayout;
+    {
+        DrawerLayout drawerLayout;
         NavigationView navigationView;
 
         protected override int LayoutResource
@@ -59,6 +61,8 @@ namespace MonkeysApp.Activities
             }
         }
 
+       
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -68,6 +72,10 @@ namespace MonkeysApp.Activities
 
             SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+
+
+
+
             navigationView.NavigationItemSelected += (sender, e) =>
             {
                 e.MenuItem.SetChecked(true);
@@ -87,6 +95,10 @@ namespace MonkeysApp.Activities
                 drawerLayout.CloseDrawers();
             };
 
+           
+
+
+
             //if first time you will want to go ahead and click first item.
             if (savedInstanceState == null)
             {
@@ -95,7 +107,23 @@ namespace MonkeysApp.Activities
 
             OnNewIntent(Intent);
 
+
         }
+
+        public override void OnBackPressed()
+        {
+
+            if (drawerLayout.IsDrawerOpen((int)GravityFlags.Start))
+            {
+                drawerLayout.CloseDrawer((int)GravityFlags.Start);
+            }
+            else
+            {
+                base.OnBackPressed();
+            }
+        }
+
+
 
         protected override void OnNewIntent(Intent intent)
         {
