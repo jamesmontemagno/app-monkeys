@@ -1,12 +1,7 @@
-﻿using System;
-using Android.App;
-using Android.Graphics;
+﻿using Android.App;
 using Android.Graphics.Drawables;
-using Android.Service.Quicksettings;
 using Android.Service.QuickSettings;
-using Android.Support.V7.View;
 using Android.Views;
-using Android.Widget;
 using Java.Lang;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
 
@@ -82,7 +77,7 @@ namespace MonkeysApp.Services
                     ShowDialog(MonkeyDialog);
                 }));
             }
-            else 
+            else
             {
                 //Do anything here.
                 //Show Dialog
@@ -103,7 +98,7 @@ namespace MonkeysApp.Services
                 alert.SetTitle("Monkey");
 
                 alert.SetPositiveButton("OK", (senderAlert, args) =>
-                {});
+                { });
                 return alert.Create();
             }
         }
