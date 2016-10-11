@@ -28,6 +28,6 @@ using Android.App;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-
+[assembly: MetaData ("net.hockeyapp.android.appIdentifier", Value = "b13d1f34a58c41438f925deb61afff71")]
 // Add some common permissions, these can be removed if not needed
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]

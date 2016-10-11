@@ -3,6 +3,8 @@ using System;
 using Android.App;
 using Android.OS;
 using Android.Runtime;
+using HockeyApp.Android;
+using HockeyApp.Android.Metrics;
 using Plugin.CurrentActivity;
 using UniversalImageLoader.Core;
 
@@ -20,12 +22,13 @@ namespace MonkeysApp
         public override void OnCreate()
         {
             base.OnCreate();
-            Xamarin.Insights.Initialize (global::MonkeysApp.XamarinInsights.ApiKey, this);
+
+            CrashManager.Register (this);
+            MetricsManager.Register (this);
             var config = ImageLoaderConfiguration.CreateDefault(ApplicationContext);
             // Initialize ImageLoader with configuration.
             ImageLoader.Instance.Init(config);
             RegisterActivityLifecycleCallbacks(this);
-            //A great place to initialize Xamarin.Insights and Dependency Services!
         }
 
         public override void OnTerminate()

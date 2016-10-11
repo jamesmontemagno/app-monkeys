@@ -75,7 +75,7 @@ namespace MonkeysApp.Activities
             if(monkey == null)
                 return;
 
-            Xamarin.Insights.Track("Details", "monkey", monkey.Name);
+            HockeyApp.MetricsManager.TrackEvent("Details", new Dictionary<string, string> { { "monkey", monkey.Name } }, new Dictionary<string, double> { { "time", 1.0 } });
             
             var collapsingToolbar = FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar);
             collapsingToolbar.SetTitle(monkey.Name);

@@ -13,7 +13,7 @@ using Android.Support.V7.App;
 
 namespace MonkeysApp.Activities
 {
-    [Activity(Label = "Monkeys App", Name="com.refractored.monkeysapp.MainActivity", MainLauncher = true, LaunchMode = LaunchMode.SingleTop, Icon = "@drawable/ic_launcher")]
+    [Activity(Label = "Monkeys", Name="com.refractored.monkeysapp.MainActivity", MainLauncher = true, LaunchMode = LaunchMode.SingleTop, Icon = "@drawable/ic_launcher")]
     #region Intent Filters
     [IntentFilter(new []{ Intent.ActionView },
         Categories = new []

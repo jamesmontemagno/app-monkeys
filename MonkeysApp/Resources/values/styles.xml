@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
 
+	<style name="DialogTheme" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+	</style>
   <!--
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
