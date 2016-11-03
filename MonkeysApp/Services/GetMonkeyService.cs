@@ -34,7 +34,7 @@ namespace MonkeysApp.Services
 
             tile.Icon = Icon.CreateWithResource(this, Resource.Drawable.ic_tile_default);
             tile.Label = GetString(Resource.String.tile_name);
-            //tile.State = TileState.Active;
+            tile.State = TileState.Active;
             tile.UpdateTile();
 
         }
