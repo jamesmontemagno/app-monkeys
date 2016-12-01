@@ -23,6 +23,7 @@ using Android.Gms.Common.Apis;
 using Android.Runtime;
 using IndexingAction = Android.Gms.AppIndexing.Action;
 using Android.Content.PM;
+using Microsoft.Azure.Mobile.Analytics;
 
 namespace MonkeysApp.Activities
 {
@@ -75,7 +76,7 @@ namespace MonkeysApp.Activities
             if(monkey == null)
                 return;
 
-            HockeyApp.MetricsManager.TrackEvent("Details", new Dictionary<string, string> { { "monkey", monkey.Name } }, new Dictionary<string, double> { { "time", 1.0 } });
+            Analytics.TrackEvent("Details", new Dictionary<string, string> { { "monkey", monkey.Name } });
             
             var collapsingToolbar = FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar);
             collapsingToolbar.SetTitle(monkey.Name);

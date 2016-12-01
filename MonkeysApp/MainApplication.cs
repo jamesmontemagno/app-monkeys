@@ -3,8 +3,9 @@ using System;
 using Android.App;
 using Android.OS;
 using Android.Runtime;
-using HockeyApp.Android;
-using HockeyApp.Android.Metrics;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 using Plugin.CurrentActivity;
 using UniversalImageLoader.Core;
 
@@ -23,8 +24,8 @@ namespace MonkeysApp
         {
             base.OnCreate();
 
-            CrashManager.Register (this);
-            MetricsManager.Register (this);
+            MobileCenter.Start("0ed255d2-40ed-4380-8ef4-daeae3f56632",
+                    typeof(Analytics), typeof(Crashes));
             var config = ImageLoaderConfiguration.CreateDefault(ApplicationContext);
             // Initialize ImageLoader with configuration.
             ImageLoader.Instance.Init(config);

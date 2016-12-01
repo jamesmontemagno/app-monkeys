@@ -26,126 +26,6 @@ namespace MonkeysApp
 		
 		public static void UpdateIdValues()
 		{
-			global::HockeyApp.Resource.Color.hockeyapp_background_header = global::MonkeysApp.Resource.Color.hockeyapp_background_header;
-			global::HockeyApp.Resource.Color.hockeyapp_background_light = global::MonkeysApp.Resource.Color.hockeyapp_background_light;
-			global::HockeyApp.Resource.Color.hockeyapp_background_white = global::MonkeysApp.Resource.Color.hockeyapp_background_white;
-			global::HockeyApp.Resource.Color.hockeyapp_button_background = global::MonkeysApp.Resource.Color.hockeyapp_button_background;
-			global::HockeyApp.Resource.Color.hockeyapp_button_background_pressed = global::MonkeysApp.Resource.Color.hockeyapp_button_background_pressed;
-			global::HockeyApp.Resource.Color.hockeyapp_button_background_selected = global::MonkeysApp.Resource.Color.hockeyapp_button_background_selected;
-			global::HockeyApp.Resource.Color.hockeyapp_text_black = global::MonkeysApp.Resource.Color.hockeyapp_text_black;
-			global::HockeyApp.Resource.Color.hockeyapp_text_light = global::MonkeysApp.Resource.Color.hockeyapp_text_light;
-			global::HockeyApp.Resource.Color.hockeyapp_text_normal = global::MonkeysApp.Resource.Color.hockeyapp_text_normal;
-			global::HockeyApp.Resource.Color.hockeyapp_text_white = global::MonkeysApp.Resource.Color.hockeyapp_text_white;
-			global::HockeyApp.Resource.Drawable.hockeyapp_btn_background = global::MonkeysApp.Resource.Drawable.hockeyapp_btn_background;
-			global::HockeyApp.Resource.Id.button_add_response = global::MonkeysApp.Resource.Id.button_add_response;
-			global::HockeyApp.Resource.Id.button_attachment = global::MonkeysApp.Resource.Id.button_attachment;
-			global::HockeyApp.Resource.Id.button_login = global::MonkeysApp.Resource.Id.button_login;
-			global::HockeyApp.Resource.Id.button_refresh = global::MonkeysApp.Resource.Id.button_refresh;
-			global::HockeyApp.Resource.Id.button_send = global::MonkeysApp.Resource.Id.button_send;
-			global::HockeyApp.Resource.Id.button_update = global::MonkeysApp.Resource.Id.button_update;
-			global::HockeyApp.Resource.Id.input_email = global::MonkeysApp.Resource.Id.input_email;
-			global::HockeyApp.Resource.Id.input_message = global::MonkeysApp.Resource.Id.input_message;
-			global::HockeyApp.Resource.Id.input_name = global::MonkeysApp.Resource.Id.input_name;
-			global::HockeyApp.Resource.Id.input_password = global::MonkeysApp.Resource.Id.input_password;
-			global::HockeyApp.Resource.Id.input_subject = global::MonkeysApp.Resource.Id.input_subject;
-			global::HockeyApp.Resource.Id.label_author = global::MonkeysApp.Resource.Id.label_author;
-			global::HockeyApp.Resource.Id.label_date = global::MonkeysApp.Resource.Id.label_date;
-			global::HockeyApp.Resource.Id.label_last_updated = global::MonkeysApp.Resource.Id.label_last_updated;
-			global::HockeyApp.Resource.Id.label_message = global::MonkeysApp.Resource.Id.label_message;
-			global::HockeyApp.Resource.Id.label_text = global::MonkeysApp.Resource.Id.label_text;
-			global::HockeyApp.Resource.Id.label_title = global::MonkeysApp.Resource.Id.label_title;
-			global::HockeyApp.Resource.Id.label_version = global::MonkeysApp.Resource.Id.label_version;
-			global::HockeyApp.Resource.Id.list_attachments = global::MonkeysApp.Resource.Id.list_attachments;
-			global::HockeyApp.Resource.Id.list_feedback_messages = global::MonkeysApp.Resource.Id.list_feedback_messages;
-			global::HockeyApp.Resource.Id.text_headline = global::MonkeysApp.Resource.Id.text_headline;
-			global::HockeyApp.Resource.Id.view_header = global::MonkeysApp.Resource.Id.view_header;
-			global::HockeyApp.Resource.Id.web_update_details = global::MonkeysApp.Resource.Id.web_update_details;
-			global::HockeyApp.Resource.Id.wrapper_attachments = global::MonkeysApp.Resource.Id.wrapper_attachments;
-			global::HockeyApp.Resource.Id.wrapper_feedback = global::MonkeysApp.Resource.Id.wrapper_feedback;
-			global::HockeyApp.Resource.Id.wrapper_feedback_scroll = global::MonkeysApp.Resource.Id.wrapper_feedback_scroll;
-			global::HockeyApp.Resource.Id.wrapper_messages = global::MonkeysApp.Resource.Id.wrapper_messages;
-			global::HockeyApp.Resource.Id.wrapper_messages_buttons = global::MonkeysApp.Resource.Id.wrapper_messages_buttons;
-			global::HockeyApp.Resource.Layout.hockeyapp_activity_expiry_info = global::MonkeysApp.Resource.Layout.hockeyapp_activity_expiry_info;
-			global::HockeyApp.Resource.Layout.hockeyapp_activity_feedback = global::MonkeysApp.Resource.Layout.hockeyapp_activity_feedback;
-			global::HockeyApp.Resource.Layout.hockeyapp_activity_login = global::MonkeysApp.Resource.Layout.hockeyapp_activity_login;
-			global::HockeyApp.Resource.Layout.hockeyapp_activity_update = global::MonkeysApp.Resource.Layout.hockeyapp_activity_update;
-			global::HockeyApp.Resource.Layout.hockeyapp_fragment_update = global::MonkeysApp.Resource.Layout.hockeyapp_fragment_update;
-			global::HockeyApp.Resource.Layout.hockeyapp_view_feedback_message = global::MonkeysApp.Resource.Layout.hockeyapp_view_feedback_message;
-			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_app_name_fallback = global::MonkeysApp.Resource.String.hockeyapp_crash_dialog_app_name_fallback;
-			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_message = global::MonkeysApp.Resource.String.hockeyapp_crash_dialog_message;
-			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_negative_button = global::MonkeysApp.Resource.String.hockeyapp_crash_dialog_negative_button;
-			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_neutral_button = global::MonkeysApp.Resource.String.hockeyapp_crash_dialog_neutral_button;
-			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_positive_button = global::MonkeysApp.Resource.String.hockeyapp_crash_dialog_positive_button;
-			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_title = global::MonkeysApp.Resource.String.hockeyapp_crash_dialog_title;
-			global::HockeyApp.Resource.String.hockeyapp_dialog_error_message = global::MonkeysApp.Resource.String.hockeyapp_dialog_error_message;
-			global::HockeyApp.Resource.String.hockeyapp_dialog_error_title = global::MonkeysApp.Resource.String.hockeyapp_dialog_error_title;
-			global::HockeyApp.Resource.String.hockeyapp_dialog_negative_button = global::MonkeysApp.Resource.String.hockeyapp_dialog_negative_button;
-			global::HockeyApp.Resource.String.hockeyapp_dialog_positive_button = global::MonkeysApp.Resource.String.hockeyapp_dialog_positive_button;
-			global::HockeyApp.Resource.String.hockeyapp_download_failed_dialog_message = global::MonkeysApp.Resource.String.hockeyapp_download_failed_dialog_message;
-			global::HockeyApp.Resource.String.hockeyapp_download_failed_dialog_negative_button = global::MonkeysApp.Resource.String.hockeyapp_download_failed_dialog_negative_button;
-			global::HockeyApp.Resource.String.hockeyapp_download_failed_dialog_positive_button = global::MonkeysApp.Resource.String.hockeyapp_download_failed_dialog_positive_button;
-			global::HockeyApp.Resource.String.hockeyapp_download_failed_dialog_title = global::MonkeysApp.Resource.String.hockeyapp_download_failed_dialog_title;
-			global::HockeyApp.Resource.String.hockeyapp_error_no_network_message = global::MonkeysApp.Resource.String.hockeyapp_error_no_network_message;
-			global::HockeyApp.Resource.String.hockeyapp_expiry_info_text = global::MonkeysApp.Resource.String.hockeyapp_expiry_info_text;
-			global::HockeyApp.Resource.String.hockeyapp_expiry_info_title = global::MonkeysApp.Resource.String.hockeyapp_expiry_info_title;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_attach_file = global::MonkeysApp.Resource.String.hockeyapp_feedback_attach_file;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_attach_picture = global::MonkeysApp.Resource.String.hockeyapp_feedback_attach_picture;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_attachment_button_text = global::MonkeysApp.Resource.String.hockeyapp_feedback_attachment_button_text;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_attachment_error = global::MonkeysApp.Resource.String.hockeyapp_feedback_attachment_error;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_attachment_loading = global::MonkeysApp.Resource.String.hockeyapp_feedback_attachment_loading;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_email_hint = global::MonkeysApp.Resource.String.hockeyapp_feedback_email_hint;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_failed_text = global::MonkeysApp.Resource.String.hockeyapp_feedback_failed_text;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_failed_title = global::MonkeysApp.Resource.String.hockeyapp_feedback_failed_title;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_fetching_feedback_text = global::MonkeysApp.Resource.String.hockeyapp_feedback_fetching_feedback_text;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_generic_error = global::MonkeysApp.Resource.String.hockeyapp_feedback_generic_error;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_last_updated_text = global::MonkeysApp.Resource.String.hockeyapp_feedback_last_updated_text;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_max_attachments_allowed = global::MonkeysApp.Resource.String.hockeyapp_feedback_max_attachments_allowed;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_message_hint = global::MonkeysApp.Resource.String.hockeyapp_feedback_message_hint;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_name_hint = global::MonkeysApp.Resource.String.hockeyapp_feedback_name_hint;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_refresh_button_text = global::MonkeysApp.Resource.String.hockeyapp_feedback_refresh_button_text;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_response_button_text = global::MonkeysApp.Resource.String.hockeyapp_feedback_response_button_text;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_select_file = global::MonkeysApp.Resource.String.hockeyapp_feedback_select_file;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_select_picture = global::MonkeysApp.Resource.String.hockeyapp_feedback_select_picture;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_send_button_text = global::MonkeysApp.Resource.String.hockeyapp_feedback_send_button_text;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_send_generic_error = global::MonkeysApp.Resource.String.hockeyapp_feedback_send_generic_error;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_send_network_error = global::MonkeysApp.Resource.String.hockeyapp_feedback_send_network_error;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_sending_feedback_text = global::MonkeysApp.Resource.String.hockeyapp_feedback_sending_feedback_text;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_subject_hint = global::MonkeysApp.Resource.String.hockeyapp_feedback_subject_hint;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_title = global::MonkeysApp.Resource.String.hockeyapp_feedback_title;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_email_empty = global::MonkeysApp.Resource.String.hockeyapp_feedback_validate_email_empty;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_email_error = global::MonkeysApp.Resource.String.hockeyapp_feedback_validate_email_error;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_name_error = global::MonkeysApp.Resource.String.hockeyapp_feedback_validate_name_error;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_subject_error = global::MonkeysApp.Resource.String.hockeyapp_feedback_validate_subject_error;
-			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_text_error = global::MonkeysApp.Resource.String.hockeyapp_feedback_validate_text_error;
-			global::HockeyApp.Resource.String.hockeyapp_login_email_hint = global::MonkeysApp.Resource.String.hockeyapp_login_email_hint;
-			global::HockeyApp.Resource.String.hockeyapp_login_headline_text = global::MonkeysApp.Resource.String.hockeyapp_login_headline_text;
-			global::HockeyApp.Resource.String.hockeyapp_login_headline_text_email_only = global::MonkeysApp.Resource.String.hockeyapp_login_headline_text_email_only;
-			global::HockeyApp.Resource.String.hockeyapp_login_login_button_text = global::MonkeysApp.Resource.String.hockeyapp_login_login_button_text;
-			global::HockeyApp.Resource.String.hockeyapp_login_missing_credentials_toast = global::MonkeysApp.Resource.String.hockeyapp_login_missing_credentials_toast;
-			global::HockeyApp.Resource.String.hockeyapp_login_password_hint = global::MonkeysApp.Resource.String.hockeyapp_login_password_hint;
-			global::HockeyApp.Resource.String.hockeyapp_paint_dialog_message = global::MonkeysApp.Resource.String.hockeyapp_paint_dialog_message;
-			global::HockeyApp.Resource.String.hockeyapp_paint_dialog_negative_button = global::MonkeysApp.Resource.String.hockeyapp_paint_dialog_negative_button;
-			global::HockeyApp.Resource.String.hockeyapp_paint_dialog_neutral_button = global::MonkeysApp.Resource.String.hockeyapp_paint_dialog_neutral_button;
-			global::HockeyApp.Resource.String.hockeyapp_paint_dialog_positive_button = global::MonkeysApp.Resource.String.hockeyapp_paint_dialog_positive_button;
-			global::HockeyApp.Resource.String.hockeyapp_paint_indicator_toast = global::MonkeysApp.Resource.String.hockeyapp_paint_indicator_toast;
-			global::HockeyApp.Resource.String.hockeyapp_paint_menu_clear = global::MonkeysApp.Resource.String.hockeyapp_paint_menu_clear;
-			global::HockeyApp.Resource.String.hockeyapp_paint_menu_save = global::MonkeysApp.Resource.String.hockeyapp_paint_menu_save;
-			global::HockeyApp.Resource.String.hockeyapp_paint_menu_undo = global::MonkeysApp.Resource.String.hockeyapp_paint_menu_undo;
-			global::HockeyApp.Resource.String.hockeyapp_permission_dialog_negative_button = global::MonkeysApp.Resource.String.hockeyapp_permission_dialog_negative_button;
-			global::HockeyApp.Resource.String.hockeyapp_permission_dialog_positive_button = global::MonkeysApp.Resource.String.hockeyapp_permission_dialog_positive_button;
-			global::HockeyApp.Resource.String.hockeyapp_permission_update_message = global::MonkeysApp.Resource.String.hockeyapp_permission_update_message;
-			global::HockeyApp.Resource.String.hockeyapp_permission_update_title = global::MonkeysApp.Resource.String.hockeyapp_permission_update_title;
-			global::HockeyApp.Resource.String.hockeyapp_update_button = global::MonkeysApp.Resource.String.hockeyapp_update_button;
-			global::HockeyApp.Resource.String.hockeyapp_update_dialog_message = global::MonkeysApp.Resource.String.hockeyapp_update_dialog_message;
-			global::HockeyApp.Resource.String.hockeyapp_update_dialog_negative_button = global::MonkeysApp.Resource.String.hockeyapp_update_dialog_negative_button;
-			global::HockeyApp.Resource.String.hockeyapp_update_dialog_positive_button = global::MonkeysApp.Resource.String.hockeyapp_update_dialog_positive_button;
-			global::HockeyApp.Resource.String.hockeyapp_update_dialog_title = global::MonkeysApp.Resource.String.hockeyapp_update_dialog_title;
-			global::HockeyApp.Resource.String.hockeyapp_update_mandatory_toast = global::MonkeysApp.Resource.String.hockeyapp_update_mandatory_toast;
-			global::HockeyApp.Resource.String.hockeyapp_update_version_details_label = global::MonkeysApp.Resource.String.hockeyapp_update_version_details_label;
-			global::HockeyApp.Resource.String.library_name = global::MonkeysApp.Resource.String.library_name;
-			global::HockeyApp.Resource.Style.HockeyApp_ButtonStyle = global::MonkeysApp.Resource.Style.HockeyApp_ButtonStyle;
-			global::HockeyApp.Resource.Style.HockeyApp_EditTextStyle = global::MonkeysApp.Resource.Style.HockeyApp_EditTextStyle;
-			global::HockeyApp.Resource.Style.HockeyApp_SingleLineInputStyle = global::MonkeysApp.Resource.Style.HockeyApp_SingleLineInputStyle;
 			global::PCLStorage.Resource.String.ApplicationName = global::MonkeysApp.Resource.String.ApplicationName;
 			global::PCLStorage.Resource.String.Hello = global::MonkeysApp.Resource.String.Hello;
 		}
@@ -1173,32 +1053,32 @@ namespace MonkeysApp
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f070066
-			public const int abc_background_cache_hint_selector_material_dark = 2131165286;
+			// aapt resource value: 0x7f07005c
+			public const int abc_background_cache_hint_selector_material_dark = 2131165276;
 			
-			// aapt resource value: 0x7f070067
-			public const int abc_background_cache_hint_selector_material_light = 2131165287;
+			// aapt resource value: 0x7f07005d
+			public const int abc_background_cache_hint_selector_material_light = 2131165277;
 			
-			// aapt resource value: 0x7f070068
-			public const int abc_color_highlight_material = 2131165288;
+			// aapt resource value: 0x7f07005e
+			public const int abc_color_highlight_material = 2131165278;
 			
 			// aapt resource value: 0x7f070015
 			public const int abc_input_method_navigation_guard = 2131165205;
 			
-			// aapt resource value: 0x7f070069
-			public const int abc_primary_text_disable_only_material_dark = 2131165289;
+			// aapt resource value: 0x7f07005f
+			public const int abc_primary_text_disable_only_material_dark = 2131165279;
 			
-			// aapt resource value: 0x7f07006a
-			public const int abc_primary_text_disable_only_material_light = 2131165290;
+			// aapt resource value: 0x7f070060
+			public const int abc_primary_text_disable_only_material_light = 2131165280;
 			
-			// aapt resource value: 0x7f07006b
-			public const int abc_primary_text_material_dark = 2131165291;
+			// aapt resource value: 0x7f070061
+			public const int abc_primary_text_material_dark = 2131165281;
 			
-			// aapt resource value: 0x7f07006c
-			public const int abc_primary_text_material_light = 2131165292;
+			// aapt resource value: 0x7f070062
+			public const int abc_primary_text_material_light = 2131165282;
 			
-			// aapt resource value: 0x7f07006d
-			public const int abc_search_url_text = 2131165293;
+			// aapt resource value: 0x7f070063
+			public const int abc_search_url_text = 2131165283;
 			
 			// aapt resource value: 0x7f070016
 			public const int abc_search_url_text_normal = 2131165206;
@@ -1209,14 +1089,14 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f070018
 			public const int abc_search_url_text_selected = 2131165208;
 			
-			// aapt resource value: 0x7f07006e
-			public const int abc_secondary_text_material_dark = 2131165294;
-			
-			// aapt resource value: 0x7f07006f
-			public const int abc_secondary_text_material_light = 2131165295;
+			// aapt resource value: 0x7f070064
+			public const int abc_secondary_text_material_dark = 2131165284;
 			
 			// aapt resource value: 0x7f070065
-			public const int accent = 2131165285;
+			public const int abc_secondary_text_material_light = 2131165285;
+			
+			// aapt resource value: 0x7f07005b
+			public const int accent = 2131165275;
 			
 			// aapt resource value: 0x7f070019
 			public const int accent_material_dark = 2131165209;
@@ -1275,8 +1155,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f070008
 			public const int common_action_bar_splitter = 2131165192;
 			
-			// aapt resource value: 0x7f070070
-			public const int common_google_signin_btn_text_dark = 2131165296;
+			// aapt resource value: 0x7f070066
+			public const int common_google_signin_btn_text_dark = 2131165286;
 			
 			// aapt resource value: 0x7f070009
 			public const int common_google_signin_btn_text_dark_default = 2131165193;
@@ -1290,8 +1170,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f07000a
 			public const int common_google_signin_btn_text_dark_pressed = 2131165194;
 			
-			// aapt resource value: 0x7f070071
-			public const int common_google_signin_btn_text_light = 2131165297;
+			// aapt resource value: 0x7f070067
+			public const int common_google_signin_btn_text_light = 2131165287;
 			
 			// aapt resource value: 0x7f07000d
 			public const int common_google_signin_btn_text_light_default = 2131165197;
@@ -1305,8 +1185,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f07000e
 			public const int common_google_signin_btn_text_light_pressed = 2131165198;
 			
-			// aapt resource value: 0x7f070072
-			public const int common_plus_signin_btn_text_dark = 2131165298;
+			// aapt resource value: 0x7f070068
+			public const int common_plus_signin_btn_text_dark = 2131165288;
 			
 			// aapt resource value: 0x7f070000
 			public const int common_plus_signin_btn_text_dark_default = 2131165184;
@@ -1320,8 +1200,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f070001
 			public const int common_plus_signin_btn_text_dark_pressed = 2131165185;
 			
-			// aapt resource value: 0x7f070073
-			public const int common_plus_signin_btn_text_light = 2131165299;
+			// aapt resource value: 0x7f070069
+			public const int common_plus_signin_btn_text_light = 2131165289;
 			
 			// aapt resource value: 0x7f070004
 			public const int common_plus_signin_btn_text_light_default = 2131165188;
@@ -1395,36 +1275,6 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f070030
 			public const int hint_foreground_material_light = 2131165232;
 			
-			// aapt resource value: 0x7f070059
-			public const int hockeyapp_background_header = 2131165273;
-			
-			// aapt resource value: 0x7f07005a
-			public const int hockeyapp_background_light = 2131165274;
-			
-			// aapt resource value: 0x7f07005b
-			public const int hockeyapp_background_white = 2131165275;
-			
-			// aapt resource value: 0x7f07005c
-			public const int hockeyapp_button_background = 2131165276;
-			
-			// aapt resource value: 0x7f07005d
-			public const int hockeyapp_button_background_pressed = 2131165277;
-			
-			// aapt resource value: 0x7f07005e
-			public const int hockeyapp_button_background_selected = 2131165278;
-			
-			// aapt resource value: 0x7f07005f
-			public const int hockeyapp_text_black = 2131165279;
-			
-			// aapt resource value: 0x7f070060
-			public const int hockeyapp_text_light = 2131165280;
-			
-			// aapt resource value: 0x7f070061
-			public const int hockeyapp_text_normal = 2131165281;
-			
-			// aapt resource value: 0x7f070062
-			public const int hockeyapp_text_white = 2131165282;
-			
 			// aapt resource value: 0x7f070031
 			public const int material_blue_grey_800 = 2131165233;
 			
@@ -1461,11 +1311,11 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f07003c
 			public const int material_grey_900 = 2131165244;
 			
-			// aapt resource value: 0x7f070063
-			public const int primary = 2131165283;
+			// aapt resource value: 0x7f070059
+			public const int primary = 2131165273;
 			
-			// aapt resource value: 0x7f070064
-			public const int primaryDark = 2131165284;
+			// aapt resource value: 0x7f07005a
+			public const int primaryDark = 2131165274;
 			
 			// aapt resource value: 0x7f07003d
 			public const int primary_dark_material_dark = 2131165245;
@@ -1515,11 +1365,11 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f07004c
 			public const int switch_thumb_disabled_material_light = 2131165260;
 			
-			// aapt resource value: 0x7f070074
-			public const int switch_thumb_material_dark = 2131165300;
+			// aapt resource value: 0x7f07006a
+			public const int switch_thumb_material_dark = 2131165290;
 			
-			// aapt resource value: 0x7f070075
-			public const int switch_thumb_material_light = 2131165301;
+			// aapt resource value: 0x7f07006b
+			public const int switch_thumb_material_light = 2131165291;
 			
 			// aapt resource value: 0x7f07004d
 			public const int switch_thumb_normal_material_dark = 2131165261;
@@ -2259,28 +2109,25 @@ namespace MonkeysApp
 			public const int gorilla = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int hockeyapp_btn_background = 2130837624;
+			public const int ic_launcher = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int ic_launcher = 2130837625;
+			public const int ic_menu = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int ic_menu = 2130837626;
+			public const int ic_monkey = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int ic_monkey = 2130837627;
+			public const int ic_profile = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int ic_profile = 2130837628;
+			public const int ic_tile_default = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int ic_tile_default = 2130837629;
+			public const int monkey_place = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int monkey_place = 2130837630;
-			
-			// aapt resource value: 0x7f02007f
-			public const int notification_template_icon_bg = 2130837631;
+			public const int notification_template_icon_bg = 2130837630;
 			
 			static Drawable()
 			{
@@ -2295,8 +2142,8 @@ namespace MonkeysApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0900a9
-			public const int action0 = 2131296425;
+			// aapt resource value: 0x7f09008d
+			public const int action0 = 2131296397;
 			
 			// aapt resource value: 0x7f090062
 			public const int action_bar = 2131296354;
@@ -2322,8 +2169,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f090063
 			public const int action_context_bar = 2131296355;
 			
-			// aapt resource value: 0x7f0900ad
-			public const int action_divider = 2131296429;
+			// aapt resource value: 0x7f090091
+			public const int action_divider = 2131296401;
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -2370,26 +2217,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f09004c
 			public const int buttonPanel = 2131296332;
 			
-			// aapt resource value: 0x7f090098
-			public const int button_add_response = 2131296408;
-			
-			// aapt resource value: 0x7f090093
-			public const int button_attachment = 2131296403;
-			
-			// aapt resource value: 0x7f09009d
-			public const int button_login = 2131296413;
-			
-			// aapt resource value: 0x7f090099
-			public const int button_refresh = 2131296409;
-			
-			// aapt resource value: 0x7f090094
-			public const int button_send = 2131296404;
-			
-			// aapt resource value: 0x7f0900a1
-			public const int button_update = 2131296417;
-			
-			// aapt resource value: 0x7f0900aa
-			public const int cancel_action = 2131296426;
+			// aapt resource value: 0x7f09008e
+			public const int cancel_action = 2131296398;
 			
 			// aapt resource value: 0x7f090033
 			public const int center = 2131296307;
@@ -2403,8 +2232,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f09005a
 			public const int checkbox = 2131296346;
 			
-			// aapt resource value: 0x7f0900b0
-			public const int chronometer = 2131296432;
+			// aapt resource value: 0x7f090094
+			public const int chronometer = 2131296404;
 			
 			// aapt resource value: 0x7f09003b
 			public const int clip_horizontal = 2131296315;
@@ -2472,8 +2301,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f090024
 			public const int end = 2131296292;
 			
-			// aapt resource value: 0x7f0900b5
-			public const int end_padder = 2131296437;
+			// aapt resource value: 0x7f090099
+			public const int end_padder = 2131296409;
 			
 			// aapt resource value: 0x7f09002b
 			public const int enterAlways = 2131296299;
@@ -2526,53 +2355,17 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f090047
 			public const int image = 2131296327;
 			
-			// aapt resource value: 0x7f0900b4
-			public const int info = 2131296436;
+			// aapt resource value: 0x7f090098
+			public const int info = 2131296408;
 			
-			// aapt resource value: 0x7f09008f
-			public const int input_email = 2131296399;
+			// aapt resource value: 0x7f09008b
+			public const int item_image = 2131296395;
 			
-			// aapt resource value: 0x7f090091
-			public const int input_message = 2131296401;
-			
-			// aapt resource value: 0x7f09008e
-			public const int input_name = 2131296398;
-			
-			// aapt resource value: 0x7f09009c
-			public const int input_password = 2131296412;
-			
-			// aapt resource value: 0x7f090090
-			public const int input_subject = 2131296400;
-			
-			// aapt resource value: 0x7f0900a7
-			public const int item_image = 2131296423;
-			
-			// aapt resource value: 0x7f0900a8
-			public const int item_title = 2131296424;
+			// aapt resource value: 0x7f09008c
+			public const int item_title = 2131296396;
 			
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_previous_elevation = 2131296256;
-			
-			// aapt resource value: 0x7f0900a3
-			public const int label_author = 2131296419;
-			
-			// aapt resource value: 0x7f0900a4
-			public const int label_date = 2131296420;
-			
-			// aapt resource value: 0x7f090096
-			public const int label_last_updated = 2131296406;
-			
-			// aapt resource value: 0x7f09008b
-			public const int label_message = 2131296395;
-			
-			// aapt resource value: 0x7f0900a5
-			public const int label_text = 2131296421;
-			
-			// aapt resource value: 0x7f09009f
-			public const int label_title = 2131296415;
-			
-			// aapt resource value: 0x7f0900a0
-			public const int label_version = 2131296416;
 			
 			// aapt resource value: 0x7f090037
 			public const int left = 2131296311;
@@ -2580,20 +2373,14 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f090013
 			public const int light = 2131296275;
 			
-			// aapt resource value: 0x7f0900ae
-			public const int line1 = 2131296430;
+			// aapt resource value: 0x7f090092
+			public const int line1 = 2131296402;
 			
-			// aapt resource value: 0x7f0900b2
-			public const int line3 = 2131296434;
+			// aapt resource value: 0x7f090096
+			public const int line3 = 2131296406;
 			
 			// aapt resource value: 0x7f090014
 			public const int listMode = 2131296276;
-			
-			// aapt resource value: 0x7f0900a6
-			public const int list_attachments = 2131296422;
-			
-			// aapt resource value: 0x7f09009a
-			public const int list_feedback_messages = 2131296410;
 			
 			// aapt resource value: 0x7f090049
 			public const int list_item = 2131296329;
@@ -2601,8 +2388,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f090071
 			public const int main_content = 2131296369;
 			
-			// aapt resource value: 0x7f0900ac
-			public const int media_actions = 2131296428;
+			// aapt resource value: 0x7f090090
+			public const int media_actions = 2131296400;
 			
 			// aapt resource value: 0x7f090025
 			public const int middle = 2131296293;
@@ -2613,11 +2400,11 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f09001e
 			public const int multiply = 2131296286;
 			
-			// aapt resource value: 0x7f0900b6
-			public const int nav_home = 2131296438;
+			// aapt resource value: 0x7f09009a
+			public const int nav_home = 2131296410;
 			
-			// aapt resource value: 0x7f0900b7
-			public const int nav_profile = 2131296439;
+			// aapt resource value: 0x7f09009b
+			public const int nav_profile = 2131296411;
 			
 			// aapt resource value: 0x7f09007b
 			public const int nav_view = 2131296379;
@@ -2757,8 +2544,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f090039
 			public const int start = 2131296313;
 			
-			// aapt resource value: 0x7f0900ab
-			public const int status_bar_latest_event_content = 2131296427;
+			// aapt resource value: 0x7f09008f
+			public const int status_bar_latest_event_content = 2131296399;
 			
 			// aapt resource value: 0x7f09006d
 			public const int submit_area = 2131296365;
@@ -2766,20 +2553,17 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f090016
 			public const int tabMode = 2131296278;
 			
-			// aapt resource value: 0x7f0900b3
-			public const int text = 2131296435;
+			// aapt resource value: 0x7f090097
+			public const int text = 2131296407;
 			
-			// aapt resource value: 0x7f0900b1
-			public const int text2 = 2131296433;
+			// aapt resource value: 0x7f090095
+			public const int text2 = 2131296405;
 			
 			// aapt resource value: 0x7f090055
 			public const int textSpacerNoButtons = 2131296341;
 			
-			// aapt resource value: 0x7f09009b
-			public const int text_headline = 2131296411;
-			
-			// aapt resource value: 0x7f0900af
-			public const int time = 2131296431;
+			// aapt resource value: 0x7f090093
+			public const int time = 2131296403;
 			
 			// aapt resource value: 0x7f09004b
 			public const int title = 2131296331;
@@ -2811,14 +2595,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f09001c
 			public const int useLogo = 2131296284;
 			
-			// aapt resource value: 0x7f09009e
-			public const int view_header = 2131296414;
-			
 			// aapt resource value: 0x7f09000a
 			public const int view_offset_helper = 2131296266;
-			
-			// aapt resource value: 0x7f0900a2
-			public const int web_update_details = 2131296418;
 			
 			// aapt resource value: 0x7f090089
 			public const int website = 2131296393;
@@ -2831,21 +2609,6 @@ namespace MonkeysApp
 			
 			// aapt resource value: 0x7f09001d
 			public const int wrap_content = 2131296285;
-			
-			// aapt resource value: 0x7f090092
-			public const int wrapper_attachments = 2131296402;
-			
-			// aapt resource value: 0x7f09008d
-			public const int wrapper_feedback = 2131296397;
-			
-			// aapt resource value: 0x7f09008c
-			public const int wrapper_feedback_scroll = 2131296396;
-			
-			// aapt resource value: 0x7f090095
-			public const int wrapper_messages = 2131296405;
-			
-			// aapt resource value: 0x7f090097
-			public const int wrapper_messages_buttons = 2131296407;
 			
 			static Id()
 			{
@@ -3027,67 +2790,49 @@ namespace MonkeysApp
 			public const int fragment_profile = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int hockeyapp_activity_expiry_info = 2130903082;
+			public const int item_monkey = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int hockeyapp_activity_feedback = 2130903083;
+			public const int nav_header = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int hockeyapp_activity_login = 2130903084;
+			public const int notification_media_action = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int hockeyapp_activity_update = 2130903085;
+			public const int notification_media_cancel_action = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int hockeyapp_fragment_update = 2130903086;
+			public const int notification_template_big_media = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int hockeyapp_view_feedback_message = 2130903087;
+			public const int notification_template_big_media_narrow = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int item_monkey = 2130903088;
+			public const int notification_template_lines = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int nav_header = 2130903089;
+			public const int notification_template_media = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int notification_media_action = 2130903090;
+			public const int notification_template_part_chronometer = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int notification_media_cancel_action = 2130903091;
+			public const int notification_template_part_time = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int notification_template_big_media = 2130903092;
+			public const int select_dialog_item_material = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int notification_template_big_media_narrow = 2130903093;
+			public const int select_dialog_multichoice_material = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int notification_template_lines = 2130903094;
+			public const int select_dialog_singlechoice_material = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int notification_template_media = 2130903095;
+			public const int support_simple_spinner_dropdown_item = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int notification_template_part_chronometer = 2130903096;
-			
-			// aapt resource value: 0x7f030039
-			public const int notification_template_part_time = 2130903097;
-			
-			// aapt resource value: 0x7f03003a
-			public const int select_dialog_item_material = 2130903098;
-			
-			// aapt resource value: 0x7f03003b
-			public const int select_dialog_multichoice_material = 2130903099;
-			
-			// aapt resource value: 0x7f03003c
-			public const int select_dialog_singlechoice_material = 2130903100;
-			
-			// aapt resource value: 0x7f03003d
-			public const int support_simple_spinner_dropdown_item = 2130903101;
-			
-			// aapt resource value: 0x7f03003e
-			public const int toolbar = 2130903102;
+			public const int toolbar = 2130903096;
 			
 			static Layout()
 			{
@@ -3283,239 +3028,23 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f05001e
 			public const int common_signin_button_text_long = 2131034142;
 			
-			// aapt resource value: 0x7f050081
-			public const int drawer_close = 2131034241;
-			
-			// aapt resource value: 0x7f050080
-			public const int drawer_open = 2131034240;
-			
 			// aapt resource value: 0x7f050039
-			public const int hockeyapp_crash_dialog_app_name_fallback = 2131034169;
-			
-			// aapt resource value: 0x7f05003a
-			public const int hockeyapp_crash_dialog_message = 2131034170;
-			
-			// aapt resource value: 0x7f05003b
-			public const int hockeyapp_crash_dialog_negative_button = 2131034171;
-			
-			// aapt resource value: 0x7f05003c
-			public const int hockeyapp_crash_dialog_neutral_button = 2131034172;
-			
-			// aapt resource value: 0x7f05003d
-			public const int hockeyapp_crash_dialog_positive_button = 2131034173;
-			
-			// aapt resource value: 0x7f05003e
-			public const int hockeyapp_crash_dialog_title = 2131034174;
-			
-			// aapt resource value: 0x7f05003f
-			public const int hockeyapp_dialog_error_message = 2131034175;
-			
-			// aapt resource value: 0x7f050040
-			public const int hockeyapp_dialog_error_title = 2131034176;
-			
-			// aapt resource value: 0x7f050041
-			public const int hockeyapp_dialog_negative_button = 2131034177;
-			
-			// aapt resource value: 0x7f050042
-			public const int hockeyapp_dialog_positive_button = 2131034178;
-			
-			// aapt resource value: 0x7f050043
-			public const int hockeyapp_download_failed_dialog_message = 2131034179;
-			
-			// aapt resource value: 0x7f050044
-			public const int hockeyapp_download_failed_dialog_negative_button = 2131034180;
-			
-			// aapt resource value: 0x7f050045
-			public const int hockeyapp_download_failed_dialog_positive_button = 2131034181;
-			
-			// aapt resource value: 0x7f050046
-			public const int hockeyapp_download_failed_dialog_title = 2131034182;
-			
-			// aapt resource value: 0x7f050047
-			public const int hockeyapp_error_no_network_message = 2131034183;
-			
-			// aapt resource value: 0x7f050048
-			public const int hockeyapp_expiry_info_text = 2131034184;
-			
-			// aapt resource value: 0x7f050049
-			public const int hockeyapp_expiry_info_title = 2131034185;
-			
-			// aapt resource value: 0x7f05004a
-			public const int hockeyapp_feedback_attach_file = 2131034186;
-			
-			// aapt resource value: 0x7f05004b
-			public const int hockeyapp_feedback_attach_picture = 2131034187;
-			
-			// aapt resource value: 0x7f05004c
-			public const int hockeyapp_feedback_attachment_button_text = 2131034188;
-			
-			// aapt resource value: 0x7f05004d
-			public const int hockeyapp_feedback_attachment_error = 2131034189;
-			
-			// aapt resource value: 0x7f05004e
-			public const int hockeyapp_feedback_attachment_loading = 2131034190;
-			
-			// aapt resource value: 0x7f05004f
-			public const int hockeyapp_feedback_email_hint = 2131034191;
-			
-			// aapt resource value: 0x7f050050
-			public const int hockeyapp_feedback_failed_text = 2131034192;
-			
-			// aapt resource value: 0x7f050051
-			public const int hockeyapp_feedback_failed_title = 2131034193;
-			
-			// aapt resource value: 0x7f050052
-			public const int hockeyapp_feedback_fetching_feedback_text = 2131034194;
-			
-			// aapt resource value: 0x7f050053
-			public const int hockeyapp_feedback_generic_error = 2131034195;
-			
-			// aapt resource value: 0x7f050054
-			public const int hockeyapp_feedback_last_updated_text = 2131034196;
-			
-			// aapt resource value: 0x7f050055
-			public const int hockeyapp_feedback_max_attachments_allowed = 2131034197;
-			
-			// aapt resource value: 0x7f050056
-			public const int hockeyapp_feedback_message_hint = 2131034198;
-			
-			// aapt resource value: 0x7f050057
-			public const int hockeyapp_feedback_name_hint = 2131034199;
-			
-			// aapt resource value: 0x7f050058
-			public const int hockeyapp_feedback_refresh_button_text = 2131034200;
-			
-			// aapt resource value: 0x7f050059
-			public const int hockeyapp_feedback_response_button_text = 2131034201;
-			
-			// aapt resource value: 0x7f05005a
-			public const int hockeyapp_feedback_select_file = 2131034202;
-			
-			// aapt resource value: 0x7f05005b
-			public const int hockeyapp_feedback_select_picture = 2131034203;
-			
-			// aapt resource value: 0x7f05005c
-			public const int hockeyapp_feedback_send_button_text = 2131034204;
-			
-			// aapt resource value: 0x7f05005d
-			public const int hockeyapp_feedback_send_generic_error = 2131034205;
-			
-			// aapt resource value: 0x7f05005e
-			public const int hockeyapp_feedback_send_network_error = 2131034206;
-			
-			// aapt resource value: 0x7f05005f
-			public const int hockeyapp_feedback_sending_feedback_text = 2131034207;
-			
-			// aapt resource value: 0x7f050060
-			public const int hockeyapp_feedback_subject_hint = 2131034208;
-			
-			// aapt resource value: 0x7f050061
-			public const int hockeyapp_feedback_title = 2131034209;
-			
-			// aapt resource value: 0x7f050062
-			public const int hockeyapp_feedback_validate_email_empty = 2131034210;
-			
-			// aapt resource value: 0x7f050063
-			public const int hockeyapp_feedback_validate_email_error = 2131034211;
-			
-			// aapt resource value: 0x7f050064
-			public const int hockeyapp_feedback_validate_name_error = 2131034212;
-			
-			// aapt resource value: 0x7f050065
-			public const int hockeyapp_feedback_validate_subject_error = 2131034213;
-			
-			// aapt resource value: 0x7f050066
-			public const int hockeyapp_feedback_validate_text_error = 2131034214;
-			
-			// aapt resource value: 0x7f050067
-			public const int hockeyapp_login_email_hint = 2131034215;
-			
-			// aapt resource value: 0x7f050068
-			public const int hockeyapp_login_headline_text = 2131034216;
-			
-			// aapt resource value: 0x7f050069
-			public const int hockeyapp_login_headline_text_email_only = 2131034217;
-			
-			// aapt resource value: 0x7f05006a
-			public const int hockeyapp_login_login_button_text = 2131034218;
-			
-			// aapt resource value: 0x7f05006b
-			public const int hockeyapp_login_missing_credentials_toast = 2131034219;
-			
-			// aapt resource value: 0x7f05006c
-			public const int hockeyapp_login_password_hint = 2131034220;
-			
-			// aapt resource value: 0x7f05006d
-			public const int hockeyapp_paint_dialog_message = 2131034221;
-			
-			// aapt resource value: 0x7f05006e
-			public const int hockeyapp_paint_dialog_negative_button = 2131034222;
-			
-			// aapt resource value: 0x7f05006f
-			public const int hockeyapp_paint_dialog_neutral_button = 2131034223;
-			
-			// aapt resource value: 0x7f050070
-			public const int hockeyapp_paint_dialog_positive_button = 2131034224;
-			
-			// aapt resource value: 0x7f050071
-			public const int hockeyapp_paint_indicator_toast = 2131034225;
-			
-			// aapt resource value: 0x7f050072
-			public const int hockeyapp_paint_menu_clear = 2131034226;
-			
-			// aapt resource value: 0x7f050073
-			public const int hockeyapp_paint_menu_save = 2131034227;
-			
-			// aapt resource value: 0x7f050074
-			public const int hockeyapp_paint_menu_undo = 2131034228;
-			
-			// aapt resource value: 0x7f050075
-			public const int hockeyapp_permission_dialog_negative_button = 2131034229;
-			
-			// aapt resource value: 0x7f050076
-			public const int hockeyapp_permission_dialog_positive_button = 2131034230;
-			
-			// aapt resource value: 0x7f050077
-			public const int hockeyapp_permission_update_message = 2131034231;
-			
-			// aapt resource value: 0x7f050078
-			public const int hockeyapp_permission_update_title = 2131034232;
-			
-			// aapt resource value: 0x7f050079
-			public const int hockeyapp_update_button = 2131034233;
-			
-			// aapt resource value: 0x7f05007a
-			public const int hockeyapp_update_dialog_message = 2131034234;
-			
-			// aapt resource value: 0x7f05007b
-			public const int hockeyapp_update_dialog_negative_button = 2131034235;
-			
-			// aapt resource value: 0x7f05007c
-			public const int hockeyapp_update_dialog_positive_button = 2131034236;
-			
-			// aapt resource value: 0x7f05007d
-			public const int hockeyapp_update_dialog_title = 2131034237;
-			
-			// aapt resource value: 0x7f05007e
-			public const int hockeyapp_update_mandatory_toast = 2131034238;
-			
-			// aapt resource value: 0x7f05007f
-			public const int hockeyapp_update_version_details_label = 2131034239;
+			public const int drawer_close = 2131034169;
 			
 			// aapt resource value: 0x7f050038
-			public const int library_name = 2131034168;
+			public const int drawer_open = 2131034168;
 			
-			// aapt resource value: 0x7f050082
-			public const int menu_refresh = 2131034242;
+			// aapt resource value: 0x7f05003a
+			public const int menu_refresh = 2131034170;
 			
-			// aapt resource value: 0x7f050084
-			public const int monkey_ipsum = 2131034244;
+			// aapt resource value: 0x7f05003c
+			public const int monkey_ipsum = 2131034172;
 			
 			// aapt resource value: 0x7f050032
 			public const int status_bar_notification_info_overflow = 2131034162;
 			
-			// aapt resource value: 0x7f050083
-			public const int tile_name = 2131034243;
+			// aapt resource value: 0x7f05003b
+			public const int tile_name = 2131034171;
 			
 			static String()
 			{
@@ -3986,23 +3515,14 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f0a0003
 			public const int CardView_Light = 2131361795;
 			
-			// aapt resource value: 0x7f0a015e
-			public const int DialogTheme = 2131362142;
-			
 			// aapt resource value: 0x7f0a015b
-			public const int HockeyApp_ButtonStyle = 2131362139;
-			
-			// aapt resource value: 0x7f0a015c
-			public const int HockeyApp_EditTextStyle = 2131362140;
+			public const int DialogTheme = 2131362139;
 			
 			// aapt resource value: 0x7f0a015d
-			public const int HockeyApp_SingleLineInputStyle = 2131362141;
+			public const int MyTheme = 2131362141;
 			
-			// aapt resource value: 0x7f0a0160
-			public const int MyTheme = 2131362144;
-			
-			// aapt resource value: 0x7f0a015f
-			public const int MyTheme_Base = 2131362143;
+			// aapt resource value: 0x7f0a015c
+			public const int MyTheme_Base = 2131362140;
 			
 			// aapt resource value: 0x7f0a001b
 			public const int Platform_AppCompat = 2131361819;
@@ -4559,8 +4079,8 @@ namespace MonkeysApp
 			// aapt resource value: 0x7f0a0141
 			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131362113;
 			
-			// aapt resource value: 0x7f0a0161
-			public const int Widget_CardContent = 2131362145;
+			// aapt resource value: 0x7f0a015e
+			public const int Widget_CardContent = 2131362142;
 			
 			// aapt resource value: 0x7f0a0152
 			public const int Widget_Design_AppBarLayout = 2131362130;

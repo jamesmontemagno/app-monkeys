@@ -9,6 +9,8 @@ using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 using UniversalImageLoader.Core;
 using Plugin.Share;
 using Android.Support.V7.Widget;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace MonkeysApp.Fragments
 {
@@ -19,7 +21,7 @@ namespace MonkeysApp.Fragments
         {
             this.RetainInstance = true;
         }
-
+        
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Android.OS.Bundle savedInstanceState)
         {
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
@@ -36,10 +38,18 @@ namespace MonkeysApp.Fragments
 
             view.FindViewById<CardView>(Resource.Id.copyright).Click += (sender, args) =>
                 {
+                   
+
                     CrossShare.Current.OpenBrowser("http://www.wikipedia.org");
                 };
+            view.FindViewById<CardView>(Resource.Id.copyright).LongClickable = true;
 
-            view.FindViewById<TextView>(Resource.Id.website).Click += (sender, args) =>
+            view.FindViewById<CardView>(Resource.Id.copyright).LongClick += (sender, args) =>
+            {
+                Crashes.GenerateTestCrash();
+            };
+
+                view.FindViewById<TextView>(Resource.Id.website).Click += (sender, args) =>
                 {
                     CrossShare.Current.OpenBrowser("http://motzcod.es");
                 };
