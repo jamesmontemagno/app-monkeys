@@ -7,7 +7,7 @@ using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
 using Plugin.CurrentActivity;
-using UniversalImageLoader.Core;
+using Com.Nostra13.Universalimageloader.Core;
 
 namespace MonkeysApp
 {

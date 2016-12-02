@@ -6,11 +6,11 @@ using Android.Widget;
 using MonkeysApp.Activities;
 using Fragment = Android.Support.V4.App.Fragment;
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
-using UniversalImageLoader.Core;
 using Plugin.Share;
 using Android.Support.V7.Widget;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Crashes;
+using Com.Nostra13.Universalimageloader.Core;
 
 namespace MonkeysApp.Fragments
 {

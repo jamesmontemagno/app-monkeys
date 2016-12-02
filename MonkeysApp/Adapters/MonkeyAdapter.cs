@@ -6,8 +6,8 @@ using Android.Views;
 using Android.Widget;
 
 using MonkeysApp.Models;
-using UniversalImageLoader.Core;
 using MonkeysApp;
+using Com.Nostra13.Universalimageloader.Core;
 
 namespace MonkeysApp.Adapters
 {

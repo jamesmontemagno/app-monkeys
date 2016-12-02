@@ -10,7 +10,6 @@ using Android.Widget;
 
 using MonkeysApp.Adapters;
 using MonkeysApp.Models;
-using UniversalImageLoader.Core;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 
@@ -24,6 +23,7 @@ using Android.Runtime;
 using IndexingAction = Android.Gms.AppIndexing.Action;
 using Android.Content.PM;
 using Microsoft.Azure.Mobile.Analytics;
+using Com.Nostra13.Universalimageloader.Core;
 
 namespace MonkeysApp.Activities
 {
