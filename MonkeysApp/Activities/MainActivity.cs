@@ -10,6 +10,7 @@ using MonkeysApp;
 using Android.Content;
 using System;
 using Android.Support.V7.App;
+using Android.Gms.Ads;
 
 namespace MonkeysApp.Activities
 {
@@ -76,7 +77,11 @@ namespace MonkeysApp.Activities
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
 
 
+            var id = Resources.GetString(Resource.String.admob_id);
+            if(!string.IsNullOrWhiteSpace(id))
+                MobileAds.Initialize(ApplicationContext, id);
 
+          
 
             navigationView.NavigationItemSelected += (sender, e) =>
             {

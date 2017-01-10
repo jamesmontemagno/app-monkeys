@@ -12,6 +12,7 @@ using MonkeysApp.Activities;
 using MonkeysApp.Adapters;
 using MonkeysApp.Models;
 using MonkeysApp.Helpers;
+using Android.Gms.Ads;
 
 namespace MonkeysApp.Fragments
 {
@@ -34,6 +35,12 @@ namespace MonkeysApp.Fragments
             friends = Util.GenerateFriends();
             grid.Adapter = new MonkeyAdapter(Activity, friends);
             grid.ItemClick += GridOnItemClick;
+
+            var adView = view.FindViewById<AdView>(Resource.Id.adView);
+            
+            var adRequest = new AdRequest.Builder().Build();
+            
+            adView.LoadAd(adRequest);
             return view;
         }
 
