@@ -115,5 +115,14 @@
     "Population": 1,
     "Latitude": 47.608013,
     "Longitude": -122.335167
+  },
+  {
+    "Name": "Barbary macaques",
+    "Location": "Gibraltar",
+    "Details": "Originally from the Atlas Mountains and the Rif Mountains of Morocco, the Barbary macaque population in Gibraltar is the only wild monkey population on the European continent.",
+    "Image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Gibraltar_Barbary_Macaque.jpg/580px-Gibraltar_Barbary_Macaque.jpg",
+    "Population": 300,
+    "Latitude": 36.13584,
+    "Longitude": -5.349249
   }
 ]
